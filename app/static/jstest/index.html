@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUnit Test Suite</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qunit/1.14.0/qunit.css" type="text/css"
+          media="screen">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qunit/1.14.0/qunit.js"></script>
+    <!-- I need all of these  -->
+    <script src="../js/frameworks.js"></script>
+    <script src="../js/react-withaddons.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+    <script src="../js/Where-to-eat.js" data-cover></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/blanket.js/1.1.4/blanket.min.js"></script>
+</head>
+<body>
+<h1 id="qunit-header">Where to Eat Tests</h1>
+
+<h2 id="qunit-banner"></h2>
+
+<div id="qunit-testrunner-toolbar"></div>
+<h2 id="qunit-userAgent"></h2>
+<ol id="qunit-tests"></ol>
+
+<div id="qunit-fixture">
+    <!-- The HTML that is needed -->
+    <h1 id="title">Where do you want to eat?</h1>
+
+    <div id="stuck"></div>
+    <div id="alert" class="none"></div>
+    <div id="left">
+        <div id="map" style="height: 620px"></div>
+    </div>
+    <div id="right">
+        <div id="loginArea"><input id="login" type="text" placeholder="fb:username or gravatar"></div>
+        <div id="restaurant" class="well">
+            <div id="restSearch"></div>
+            <div id="fsRest"></div>
+        </div>
+        <div id="tabs" class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">Votes</a></li>
+                <li><a href="#tab2" data-toggle="tab">Activity</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active activity" id="tab1">
+                    <ul id="votes"></ul>
+                </div>
+                <div class="tab-pane activity" id="tab2">
+                    <ul id="acts"></ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="react-root"></div>
+</div>
+<script src="React.js" type="text/javascript"></script>
+<script src="Josh.js" type="text/javascript"></script>
+</body>
+</html>
