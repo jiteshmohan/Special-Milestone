@@ -1,5 +1,5 @@
 var config = {
-  REDISURL: getEnv('REDISURL'),
+  REDISURL: getEnv('REDIS_PORT'),
   PORT: getEnv('PORT'),
   FOURSQUAREID: getEnv('FOURSQUAREID'),
   FOURSQUARESECRET: getEnv('FOURSQUARESECRET')
