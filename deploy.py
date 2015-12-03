@@ -8,7 +8,7 @@ def build_image(img_name, docker_file, imagevar):
     redisclient.set(imagevar,img_name)
 
 def start_container(img_name, containername, containervar, portvar):
-    cmd = 'docker run --link redis:db -p 3000 --name '+containername+' -t -d '+img_name+' /bin/sh -c \"cd /src;nodejs app.js\"'
+    cmd = 'docker run -p 8080:5000 --name '+containername+' --env-file appenv.env --link redis_ambassador:redis -d '+img_name
     process = subprocess.Popen(cmd,stdout=subprocess.PIPE, shell=True)
     process.communicate()
     redisclient.set(containervar,containername)

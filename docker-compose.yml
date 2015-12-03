@@ -1,0 +1,12 @@
+mgt_redis:
+    image: crosbymichael/redis
+    container_name: mgt_redis
+    ports:
+        - 6379:6379
+redis_ambassador:
+    image: svendowideit/ambassador
+    container_name: redis_ambassador
+    ports:
+     - 6380:6379
+    env_file:
+     - ./redisenv.env
